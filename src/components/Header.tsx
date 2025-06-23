@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Menu, X, ChevronDown, MapPin, Phone, Star, Crown, Award } from 'lucide-react';
+import { Search, Menu, X, ChevronDown, MapPin, Phone, Star, Users, Briefcase } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,23 +16,23 @@ const Header: React.FC = () => {
 
   const services = [
     {
-      category: 'Luxury Renovations',
-      items: ['Premium Kitchen Remodeling', 'Spa Bathroom Renovations', 'Master Suite Transformations', 'Whole Home Makeovers'],
-      icon: <Crown className="h-5 w-5" />
+      category: 'Home Services',
+      items: ['Plumbing & Repairs', 'Electrical Services', 'HVAC & Heating', 'Cleaning Services'],
+      icon: <Users className="h-5 w-5" />
     },
     {
-      category: 'Custom Construction',
-      items: ['Home Additions & Extensions', 'Custom Home Building', 'Outdoor Living Spaces', 'Architectural Modifications'],
-      icon: <Award className="h-5 w-5" />
+      category: 'Construction',
+      items: ['Home Renovation', 'Kitchen Remodeling', 'Bathroom Renovation', 'Roofing Services'],
+      icon: <Briefcase className="h-5 w-5" />
     },
     {
-      category: 'Interior Design',
-      items: ['Luxury Interior Design', 'Space Planning & Layout', 'Custom Furniture & Fixtures', 'Color & Material Consultation'],
+      category: 'Professional Services',
+      items: ['Interior Design', 'Landscaping', 'Painting Services', 'Handyman Services'],
       icon: <Star className="h-5 w-5" />
     },
     {
-      category: 'Premium Services',
-      items: ['Electrical & Smart Home', 'Plumbing & Luxury Fixtures', 'HVAC & Climate Control', 'Concierge Maintenance'],
+      category: 'Business Services',
+      items: ['Commercial Cleaning', 'Office Setup', 'IT Support', 'Marketing Services'],
       icon: <MapPin className="h-5 w-5" />
     }
   ];
@@ -43,29 +43,29 @@ const Header: React.FC = () => {
         ? 'bg-white/95 backdrop-blur-lg shadow-luxury border-b border-gray-100' 
         : 'bg-transparent'
     }`}>
-      {/* Premium Top Bar */}
-      <div className="bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900 text-white py-2">
+      {/* Top Bar */}
+      <div className="bg-gradient-to-r from-primary-800 via-primary-700 to-primary-800 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
               <div className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 text-secondary-400" />
-                <span className="font-medium">(555) 123-YORK</span>
+                <Phone className="h-4 w-4 mr-2 text-emerald-400" />
+                <span className="font-medium">1-800-SERVICE</span>
               </div>
               <div className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2 text-secondary-400" />
-                <span>Serving Premium Markets Nationwide</span>
+                <MapPin className="h-4 w-4 mr-2 text-emerald-400" />
+                <span>Nationwide Service Network</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
-                <Crown className="h-4 w-4 mr-2 text-secondary-400" />
-                <span className="font-medium">Award-Winning Excellence</span>
+                <Users className="h-4 w-4 mr-2 text-emerald-400" />
+                <span className="font-medium">10,000+ Trusted Vendors</span>
               </div>
               <div className="flex items-center">
-                <Star className="h-4 w-4 mr-1 text-secondary-400" />
-                <span className="font-bold">4.9/5</span>
-                <span className="ml-1">• 3,500+ Elite Projects</span>
+                <Star className="h-4 w-4 mr-1 text-emerald-400" />
+                <span className="font-bold">4.8/5</span>
+                <span className="ml-1">• 50,000+ Projects</span>
               </div>
             </div>
           </div>
@@ -75,28 +75,28 @@ const Header: React.FC = () => {
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Premium Logo */}
+          {/* Logo */}
           <div className="flex items-center group">
             <div className="relative">
-              <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white p-3 rounded-xl shadow-luxury group-hover:shadow-glow transition-all duration-300">
+              <div className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 text-white p-3 rounded-xl shadow-luxury group-hover:shadow-glow transition-all duration-300">
                 <div className="w-10 h-10 flex items-center justify-center">
-                  <span className="font-serif font-bold text-2xl">D</span>
+                  <span className="font-display font-bold text-2xl">S</span>
                 </div>
               </div>
-              <div className="absolute -top-1 -right-1 bg-secondary-400 rounded-full p-1">
-                <Crown className="h-3 w-3 text-primary-900" />
+              <div className="absolute -top-1 -right-1 bg-orange-400 rounded-full p-1">
+                <Users className="h-3 w-3 text-white" />
               </div>
             </div>
             <div className="ml-4">
-              <h1 className={`text-3xl font-serif font-bold transition-colors duration-300 ${
+              <h1 className={`text-3xl font-display font-bold transition-colors duration-300 ${
                 isScrolled ? 'text-primary-900' : 'text-white'
               }`}>
-                DanyYorks
+                ServiceHub
               </h1>
               <p className={`text-sm font-medium transition-colors duration-300 ${
                 isScrolled ? 'text-primary-600' : 'text-primary-100'
               }`}>
-                Premium Home Transformations
+                Connect • Serve • Succeed
               </p>
             </div>
           </div>
@@ -109,15 +109,15 @@ const Header: React.FC = () => {
                 onMouseLeave={() => setIsServicesOpen(false)}
                 className={`flex items-center font-semibold transition-all duration-300 hover:scale-105 ${
                   isScrolled 
-                    ? 'text-primary-700 hover:text-primary-900' 
-                    : 'text-white hover:text-secondary-300'
+                    ? 'text-primary-700 hover:text-emerald-600' 
+                    : 'text-white hover:text-emerald-300'
                 }`}
               >
-                Our Services
+                Find Services
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               
-              {/* Premium Services Dropdown */}
+              {/* Services Dropdown */}
               {isServicesOpen && (
                 <div
                   onMouseEnter={() => setIsServicesOpen(true)}
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
                   <div className="grid grid-cols-2 gap-6 px-6">
                     {services.map((service, index) => (
                       <div key={index} className="space-y-3 group">
-                        <div className="flex items-center space-x-2 text-primary-900 group-hover:text-primary-700 transition-colors">
+                        <div className="flex items-center space-x-2 text-primary-900 group-hover:text-emerald-600 transition-colors">
                           {service.icon}
                           <h3 className="font-bold text-sm">{service.category}</h3>
                         </div>
@@ -136,7 +136,7 @@ const Header: React.FC = () => {
                             <li key={idx}>
                               <a 
                                 href="#" 
-                                className="text-sm text-gray-600 hover:text-primary-600 block py-1 transition-colors hover:translate-x-1 transform duration-200"
+                                className="text-sm text-gray-600 hover:text-emerald-600 block py-1 transition-colors hover:translate-x-1 transform duration-200"
                               >
                                 {item}
                               </a>
@@ -147,48 +147,51 @@ const Header: React.FC = () => {
                     ))}
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-100 px-6">
-                    <button className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-6 rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-[1.02] shadow-premium">
-                      View All Premium Services
+                    <button className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all transform hover:scale-[1.02] shadow-premium">
+                      Browse All Services
                     </button>
                   </div>
                 </div>
               )}
             </div>
             
-            <a href="#portfolio" className={`font-semibold transition-all duration-300 hover:scale-105 ${
+            <a href="#vendors" className={`font-semibold transition-all duration-300 hover:scale-105 ${
               isScrolled 
-                ? 'text-primary-700 hover:text-primary-900' 
-                : 'text-white hover:text-secondary-300'
+                ? 'text-primary-700 hover:text-emerald-600' 
+                : 'text-white hover:text-emerald-300'
             }`}>
-              Elite Portfolio
+              For Vendors
             </a>
-            <a href="#about" className={`font-semibold transition-all duration-300 hover:scale-105 ${
+            <a href="#how-it-works" className={`font-semibold transition-all duration-300 hover:scale-105 ${
               isScrolled 
-                ? 'text-primary-700 hover:text-primary-900' 
-                : 'text-white hover:text-secondary-300'
+                ? 'text-primary-700 hover:text-emerald-600' 
+                : 'text-white hover:text-emerald-300'
             }`}>
-              Our Story
+              How It Works
             </a>
             <a href="#testimonials" className={`font-semibold transition-all duration-300 hover:scale-105 ${
               isScrolled 
-                ? 'text-primary-700 hover:text-primary-900' 
-                : 'text-white hover:text-secondary-300'
+                ? 'text-primary-700 hover:text-emerald-600' 
+                : 'text-white hover:text-emerald-300'
             }`}>
-              Client Stories
+              Reviews
             </a>
             <a href="#contact" className={`font-semibold transition-all duration-300 hover:scale-105 ${
               isScrolled 
-                ? 'text-primary-700 hover:text-primary-900' 
-                : 'text-white hover:text-secondary-300'
+                ? 'text-primary-700 hover:text-emerald-600' 
+                : 'text-white hover:text-emerald-300'
             }`}>
               Contact
             </a>
           </nav>
 
-          {/* Premium CTA Button */}
+          {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="bg-gradient-to-r from-secondary-500 via-secondary-400 to-secondary-500 text-primary-900 px-8 py-3 rounded-xl font-bold hover:from-secondary-400 hover:to-secondary-400 transition-all transform hover:scale-105 shadow-premium hover:shadow-glow animate-pulse-glow">
-              Get Premium Quote
+            <button className="text-primary-700 hover:text-emerald-600 font-semibold px-4 py-2 rounded-lg transition-all">
+              Sign In
+            </button>
+            <button className="bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 text-white px-8 py-3 rounded-xl font-bold hover:from-emerald-600 hover:to-emerald-600 transition-all transform hover:scale-105 shadow-premium hover:shadow-glow animate-pulse-glow">
+              Join as Vendor
             </button>
           </div>
 
@@ -197,8 +200,8 @@ const Header: React.FC = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`lg:hidden p-2 rounded-xl transition-all duration-300 ${
               isScrolled 
-                ? 'text-primary-700 hover:text-primary-900 hover:bg-primary-50' 
-                : 'text-white hover:text-secondary-300 hover:bg-white/10'
+                ? 'text-primary-700 hover:text-emerald-600 hover:bg-primary-50' 
+                : 'text-white hover:text-emerald-300 hover:bg-white/10'
             }`}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -210,14 +213,17 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-gray-100 animate-fade-in-down">
           <div className="px-4 py-6 space-y-4">
-            <a href="#services" className="block text-primary-700 hover:text-primary-900 font-semibold py-2">Our Services</a>
-            <a href="#portfolio" className="block text-primary-700 hover:text-primary-900 font-semibold py-2">Elite Portfolio</a>
-            <a href="#about" className="block text-primary-700 hover:text-primary-900 font-semibold py-2">Our Story</a>
-            <a href="#testimonials" className="block text-primary-700 hover:text-primary-900 font-semibold py-2">Client Stories</a>
-            <a href="#contact" className="block text-primary-700 hover:text-primary-900 font-semibold py-2">Contact</a>
-            <button className="w-full bg-gradient-to-r from-secondary-500 to-secondary-400 text-primary-900 px-6 py-3 rounded-xl font-bold mt-4 shadow-premium">
-              Get Premium Quote
-            </button>
+            <a href="#services" className="block text-primary-700 hover:text-emerald-600 font-semibold py-2">Find Services</a>
+            <a href="#vendors" className="block text-primary-700 hover:text-emerald-600 font-semibold py-2">For Vendors</a>
+            <a href="#how-it-works" className="block text-primary-700 hover:text-emerald-600 font-semibold py-2">How It Works</a>
+            <a href="#testimonials" className="block text-primary-700 hover:text-emerald-600 font-semibold py-2">Reviews</a>
+            <a href="#contact" className="block text-primary-700 hover:text-emerald-600 font-semibold py-2">Contact</a>
+            <div className="pt-4 border-t border-gray-200 space-y-3">
+              <button className="w-full text-primary-700 hover:text-emerald-600 font-semibold py-2">Sign In</button>
+              <button className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-3 rounded-xl font-bold shadow-premium">
+                Join as Vendor
+              </button>
+            </div>
           </div>
         </div>
       )}

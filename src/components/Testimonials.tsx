@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Star, Quote, ArrowLeft, ArrowRight, MapPin, Calendar, Crown, Award, Sparkles } from 'lucide-react';
+import { Star, Quote, ArrowLeft, ArrowRight, MapPin, Calendar, Users, Award, Sparkles } from 'lucide-react';
 
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,81 +8,81 @@ const Testimonials: React.FC = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Victoria Sterling',
-      location: 'Beverly Hills, CA',
+      name: 'Sarah Johnson',
+      location: 'Austin, TX',
       rating: 5,
-      date: '2 weeks ago',
-      service: 'Luxury Kitchen Renovation',
+      date: '1 week ago',
+      service: 'Kitchen Renovation',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150',
-      quote: 'DanyYorks transformed our kitchen into an absolute masterpiece. The attention to detail, premium materials, and flawless execution exceeded every expectation. Our home has become the envy of the neighborhood!',
+      quote: 'ServiceHub made finding a contractor so easy! I got 5 quotes within hours and found the perfect team for my kitchen renovation. The quality was outstanding and the price was fair.',
       projectImage: 'https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=400',
-      badge: 'Platinum Client',
-      investment: '$125,000'
+      badge: 'Verified Customer',
+      type: 'customer'
     },
     {
       id: 2,
-      name: 'Alexander Chen',
-      location: 'Manhattan, NY',
+      name: 'Mike Rodriguez',
+      location: 'Denver, CO',
       rating: 5,
-      date: '1 month ago',
-      service: 'Penthouse Renovation',
+      date: '3 days ago',
+      service: 'Plumbing Services',
       image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150',
-      quote: 'Working with DanyYorks was an extraordinary experience. Their team of master craftsmen delivered impeccable quality and sophistication. Every detail was executed to perfection, creating a truly luxurious living space.',
-      projectImage: 'https://images.pexels.com/photos/6969769/pexels-photo-6969769.jpeg?auto=compress&cs=tinysrgb&w=400',
-      badge: 'Elite Client',
-      investment: '$280,000'
+      quote: 'As a plumber, ServiceHub has transformed my business. I get 20+ qualified leads per week and my revenue has increased by 60%. The platform is easy to use and customers are genuine.',
+      projectImage: 'https://images.pexels.com/photos/8486944/pexels-photo-8486944.jpeg?auto=compress&cs=tinysrgb&w=400',
+      badge: 'Top Vendor',
+      type: 'vendor'
     },
     {
       id: 3,
-      name: 'Isabella Rodriguez',
-      location: 'Malibu, CA',
+      name: 'Emily Chen',
+      location: 'Seattle, WA',
       rating: 5,
-      date: '3 weeks ago',
-      service: 'Custom Home Design',
+      date: '2 weeks ago',
+      service: 'House Cleaning',
       image: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150',
-      quote: 'DanyYorks didn\'t just renovate our home - they created a work of art. The design vision, premium materials, and exceptional craftsmanship resulted in a space that perfectly reflects our lifestyle and taste.',
-      projectImage: 'https://images.pexels.com/photos/6969870/pexels-photo-6969870.jpeg?auto=compress&cs=tinysrgb&w=400',
-      badge: 'Signature Client',
-      investment: '$450,000'
+      quote: 'I found an amazing cleaning service through ServiceHub. They were professional, thorough, and reasonably priced. Now I have more time to focus on what matters most to me.',
+      projectImage: 'https://images.pexels.com/photos/6197119/pexels-photo-6197119.jpeg?auto=compress&cs=tinysrgb&w=400',
+      badge: 'Happy Customer',
+      type: 'customer'
     },
     {
       id: 4,
-      name: 'Jonathan Blackwood',
-      location: 'Hamptons, NY',
+      name: 'David Thompson',
+      location: 'Phoenix, AZ',
       rating: 5,
       date: '5 days ago',
-      service: 'Estate Transformation',
+      service: 'Electrical Services',
       image: 'https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=150',
-      quote: 'The transformation of our estate by DanyYorks is nothing short of spectacular. Their attention to architectural details and use of premium materials has created a timeless masterpiece that will be treasured for generations.',
-      projectImage: 'https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=400',
-      badge: 'Heritage Client',
-      investment: '$650,000'
+      quote: 'ServiceHub has been a game-changer for my electrical business. The lead quality is excellent and the payment system is secure. I\'ve grown my team from 2 to 8 people in just 6 months!',
+      projectImage: 'https://images.pexels.com/photos/5691574/pexels-photo-5691574.jpeg?auto=compress&cs=tinysrgb&w=400',
+      badge: 'Growing Business',
+      type: 'vendor'
     },
     {
       id: 5,
-      name: 'Sophia Williams',
-      location: 'Pacific Heights, SF',
+      name: 'Lisa Martinez',
+      location: 'Miami, FL',
       rating: 5,
-      date: '2 months ago',
-      service: 'Interior Design Excellence',
+      date: '1 month ago',
+      service: 'Interior Design',
       image: 'https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=150',
-      quote: 'DanyYorks elevated our home to museum-quality standards. Their interior design expertise and access to exclusive materials created spaces that are both functional and breathtakingly beautiful. Absolutely phenomenal!',
-      projectImage: 'https://images.pexels.com/photos/6969860/pexels-photo-6969860.jpeg?auto=compress&cs=tinysrgb&w=400',
-      badge: 'Design Connoisseur',
-      investment: '$180,000'
+      quote: 'The interior designer I found through ServiceHub completely transformed my living space. The process was smooth, communication was excellent, and the results exceeded my expectations.',
+      projectImage: 'https://images.pexels.com/photos/6969870/pexels-photo-6969870.jpeg?auto=compress&cs=tinysrgb&w=400',
+      badge: 'Design Lover',
+      type: 'customer'
     },
     {
       id: 6,
-      name: 'Marcus Thompson',
-      location: 'Scottsdale, AZ',
+      name: 'Carlos Mendez',
+      location: 'Los Angeles, CA',
       rating: 5,
-      date: '6 weeks ago',
-      service: 'Smart Home Integration',
+      date: '2 weeks ago',
+      service: 'Landscaping',
       image: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150',
-      quote: 'The smart home integration by DanyYorks is revolutionary. They seamlessly blended cutting-edge technology with luxury design, creating an intelligent home that anticipates our every need. Truly impressive innovation!',
-      projectImage: 'https://images.pexels.com/photos/8413299/pexels-photo-8413299.jpeg?auto=compress&cs=tinysrgb&w=400',
-      badge: 'Tech Pioneer',
-      investment: '$95,000'
+      quote: 'ServiceHub connects me with homeowners who truly value quality landscaping. The platform\'s tools help me manage my business efficiently, and I love seeing my customer reviews grow.',
+      projectImage: 'https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=400',
+      badge: 'Master Landscaper',
+      type: 'vendor'
     }
   ];
 
@@ -114,49 +114,43 @@ const Testimonials: React.FC = () => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`h-6 w-6 ${i < rating ? 'text-secondary-400 fill-current' : 'text-gray-300'}`}
+        className={`h-6 w-6 ${i < rating ? 'text-orange-400 fill-current' : 'text-gray-300'}`}
       />
     ));
   };
 
-  const getBadgeColor = (badge: string) => {
-    switch (badge) {
-      case 'Platinum Client': return 'bg-gradient-to-r from-secondary-500 to-secondary-600';
-      case 'Elite Client': return 'bg-gradient-to-r from-primary-500 to-primary-600';
-      case 'Signature Client': return 'bg-gradient-to-r from-luxury-500 to-luxury-600';
-      case 'Heritage Client': return 'bg-gradient-to-r from-accent-500 to-accent-600';
-      case 'Design Connoisseur': return 'bg-gradient-to-r from-primary-600 to-primary-700';
-      case 'Tech Pioneer': return 'bg-gradient-to-r from-dark-600 to-dark-700';
-      default: return 'bg-gradient-to-r from-primary-500 to-primary-600';
-    }
+  const getBadgeColor = (type: string) => {
+    return type === 'vendor' 
+      ? 'bg-gradient-to-r from-emerald-500 to-emerald-600'
+      : 'bg-gradient-to-r from-orange-500 to-orange-600';
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-dark-900 relative overflow-hidden">
-      {/* Premium Background Effects */}
+    <section id="testimonials" className="py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 relative overflow-hidden">
+      {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-secondary-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-        <div className="absolute top-40 right-10 w-96 h-96 bg-accent-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-luxury-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-orange-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-violet-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Premium Header */}
+        {/* Header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 text-secondary-300 px-6 py-3 rounded-full text-sm font-bold mb-6">
-            <Crown className="h-5 w-5 mr-2" />
-            Client Success Stories
+          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 text-emerald-300 px-6 py-3 rounded-full text-sm font-bold mb-6">
+            <Users className="h-5 w-5 mr-2" />
+            Success Stories
             <Sparkles className="h-5 w-5 ml-2" />
           </div>
-          <h2 className="text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
-            What Our Elite Clients
-            <span className="block bg-gradient-to-r from-secondary-400 to-secondary-300 bg-clip-text text-transparent">
-              Are Saying
+          <h2 className="text-5xl lg:text-6xl font-display font-bold text-white mb-6">
+            What Our Community
+            <span className="block bg-gradient-to-r from-emerald-400 to-orange-400 bg-clip-text text-transparent">
+              Is Saying
             </span>
           </h2>
           <p className="text-xl lg:text-2xl text-primary-100 max-w-4xl mx-auto leading-relaxed">
-            Discover why discerning homeowners choose DanyYorks for their most important projects. 
-            <span className="text-secondary-300 font-semibold"> Excellence speaks for itself</span>.
+            Hear from customers who found great services and vendors who grew their businesses with 
+            <span className="text-emerald-300 font-semibold"> ServiceHub</span>.
           </p>
         </div>
 
@@ -169,7 +163,7 @@ const Testimonials: React.FC = () => {
           >
             {/* Quote Icon */}
             <div className="absolute -top-8 left-10">
-              <div className="bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-full p-6 shadow-luxury">
+              <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full p-6 shadow-luxury">
                 <Quote className="h-10 w-10 text-white" />
               </div>
             </div>
@@ -177,8 +171,8 @@ const Testimonials: React.FC = () => {
             <div className="grid lg:grid-cols-3 gap-10 items-center">
               {/* Testimonial Content */}
               <div className="lg:col-span-2">
-                {/* Client Badge */}
-                <div className={`inline-block ${getBadgeColor(testimonials[currentIndex].badge)} text-white px-4 py-2 rounded-full text-sm font-bold mb-6`}>
+                {/* Badge */}
+                <div className={`inline-block ${getBadgeColor(testimonials[currentIndex].type)} text-white px-4 py-2 rounded-full text-sm font-bold mb-6`}>
                   {testimonials[currentIndex].badge}
                 </div>
 
@@ -217,13 +211,17 @@ const Testimonials: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Service & Investment */}
+                {/* Service */}
                 <div className="flex flex-wrap gap-4">
-                  <span className="inline-block bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-bold">
+                  <span className="inline-block bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-bold">
                     {testimonials[currentIndex].service}
                   </span>
-                  <span className="inline-block bg-secondary-100 text-secondary-800 px-4 py-2 rounded-full text-sm font-bold">
-                    Investment: {testimonials[currentIndex].investment}
+                  <span className={`inline-block px-4 py-2 rounded-full text-sm font-bold ${
+                    testimonials[currentIndex].type === 'vendor' 
+                      ? 'bg-orange-100 text-orange-800' 
+                      : 'bg-violet-100 text-violet-800'
+                  }`}>
+                    {testimonials[currentIndex].type === 'vendor' ? 'Service Provider' : 'Customer'}
                   </span>
                 </div>
               </div>
@@ -238,7 +236,7 @@ const Testimonials: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                   <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl p-3">
-                    <Award className="h-6 w-6 text-secondary-600" />
+                    <Award className="h-6 w-6 text-emerald-600" />
                   </div>
                 </div>
               </div>
@@ -267,7 +265,7 @@ const Testimonials: React.FC = () => {
                 onClick={() => setCurrentIndex(index)}
                 className={`h-4 rounded-full transition-all ${
                   index === currentIndex 
-                    ? 'bg-secondary-400 w-12' 
+                    ? 'bg-emerald-400 w-12' 
                     : 'bg-white/30 w-4 hover:bg-white/50'
                 }`}
               />
@@ -275,53 +273,58 @@ const Testimonials: React.FC = () => {
           </div>
         </div>
 
-        {/* Premium Stats Summary */}
+        {/* Stats Summary */}
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-luxury p-10 border border-white/20 animate-fade-in-up">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="group">
-              <div className="text-4xl lg:text-5xl font-bold text-secondary-400 mb-3 group-hover:scale-110 transition-transform">
-                4.9★
+              <div className="text-4xl lg:text-5xl font-bold text-emerald-400 mb-3 group-hover:scale-110 transition-transform">
+                4.8★
               </div>
               <div className="text-white font-semibold">Average Rating</div>
-              <div className="text-primary-200 text-sm mt-2">Based on 3,500+ reviews</div>
+              <div className="text-primary-200 text-sm mt-2">From 50,000+ reviews</div>
             </div>
             <div className="group">
-              <div className="text-4xl lg:text-5xl font-bold text-accent-400 mb-3 group-hover:scale-110 transition-transform">
-                99%
+              <div className="text-4xl lg:text-5xl font-bold text-orange-400 mb-3 group-hover:scale-110 transition-transform">
+                98%
               </div>
               <div className="text-white font-semibold">Would Recommend</div>
               <div className="text-primary-200 text-sm mt-2">To friends & family</div>
             </div>
             <div className="group">
-              <div className="text-4xl lg:text-5xl font-bold text-secondary-400 mb-3 group-hover:scale-110 transition-transform">
-                3,500+
+              <div className="text-4xl lg:text-5xl font-bold text-emerald-400 mb-3 group-hover:scale-110 transition-transform">
+                50,000+
               </div>
-              <div className="text-white font-semibold">Elite Projects</div>
-              <div className="text-primary-200 text-sm mt-2">Completed successfully</div>
+              <div className="text-white font-semibold">Happy Customers</div>
+              <div className="text-primary-200 text-sm mt-2">And growing daily</div>
             </div>
             <div className="group">
-              <div className="text-4xl lg:text-5xl font-bold text-accent-400 mb-3 group-hover:scale-110 transition-transform">
-                12hr
+              <div className="text-4xl lg:text-5xl font-bold text-orange-400 mb-3 group-hover:scale-110 transition-transform">
+                10,000+
               </div>
-              <div className="text-white font-semibold">Response Time</div>
-              <div className="text-primary-200 text-sm mt-2">Average quote delivery</div>
+              <div className="text-white font-semibold">Trusted Vendors</div>
+              <div className="text-primary-200 text-sm mt-2">Verified professionals</div>
             </div>
           </div>
         </div>
 
-        {/* Premium CTA */}
+        {/* CTA */}
         <div className="text-center mt-20 animate-fade-in-up">
-          <Crown className="h-16 w-16 text-secondary-400 mx-auto mb-6" />
-          <h3 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-6">
-            Ready to Join Our Elite Clientele?
+          <Users className="h-16 w-16 text-emerald-400 mx-auto mb-6" />
+          <h3 className="text-3xl lg:text-4xl font-display font-bold text-white mb-6">
+            Ready to Join Our Success Stories?
           </h3>
           <p className="text-xl text-primary-100 mb-10 max-w-3xl mx-auto">
-            Experience the DanyYorks difference and discover why discerning homeowners trust us 
-            with their most prestigious projects. Your dream transformation awaits.
+            Whether you need services or want to provide them, ServiceHub is your gateway to success. 
+            Join our thriving community today.
           </p>
-          <button className="bg-gradient-to-r from-secondary-500 to-secondary-400 text-primary-900 px-12 py-5 rounded-2xl font-bold text-lg hover:from-secondary-400 hover:to-secondary-300 transition-all transform hover:scale-105 shadow-luxury">
-            Get Your Premium Quote
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-12 py-5 rounded-2xl font-bold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-luxury">
+              Find Services
+            </button>
+            <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-12 py-5 rounded-2xl font-bold text-lg hover:from-orange-600 hover:to-orange-700 transition-all transform hover:scale-105 shadow-luxury">
+              Become a Vendor
+            </button>
+          </div>
         </div>
       </div>
     </section>
